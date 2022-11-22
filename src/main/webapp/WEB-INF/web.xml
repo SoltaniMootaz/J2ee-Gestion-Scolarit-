@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+<servlet>
+<servlet-name>LoginServlet</servlet-name>
+<servlet-class>com.sdzee.gs.servlets.LoginServlet</servlet-class>
+</servlet>
+<servlet>
+<servlet-name>CreationCommande</servlet-name>
+<servlet-class>com.sdzee.tp.servlets.CreationCommande</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>LoginServlet</servlet-name>
+<url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>CreationCommande</servlet-name>
+<url-pattern>/CreationCommande</url-pattern>
+</servlet-mapping>
+</web-app>
