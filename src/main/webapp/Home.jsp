@@ -1,5 +1,15 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ pafe import=java.sql.* %>
+<%
+String user="";
+if(session.getAttribute("user")!=null){
+	user=session.getAttribute("user").toString();
+}else{
+	response.sendRedirect("Login.jsp");
+}
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
