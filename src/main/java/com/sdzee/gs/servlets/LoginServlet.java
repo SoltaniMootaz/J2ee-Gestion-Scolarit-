@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 				if (isUser==1) {
 				session.setAttribute("user", user);
 				response.sendRedirect("Home.jsp");
-				System.out.println("verified");
+				System.out.println(user);
 						
 				}else {
 					response.sendRedirect("Login.jsp");

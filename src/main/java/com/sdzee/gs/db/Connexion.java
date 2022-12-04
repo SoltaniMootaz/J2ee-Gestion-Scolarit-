@@ -116,13 +116,14 @@ import com.sdzee.gs.beans.User;
            }      
            return ID;
     }
-    public  Personne RetournerPersonneFromETD(int ID){
-         String Query="Select * from personne p Inner join etudiants e on e.ID_PERS=p.ID_PERS where e.ID_ETD=? ";
+    public static  Personne RetournerPersonneFromETD(int num){
+         String Query="Select * from personne p Inner join etudiant e on e.ID_PERS=p.ID where e.NUM_INSC=? ";
         Personne P=new Personne();
+        System.out.println(num);
         try{
                
                PreparedStatement stmt=cnx.prepareStatement(Query);
-               stmt.setInt(1, ID);
+               stmt.setInt(1, num);
                ResultSet rslt=stmt.executeQuery();   
                
                while(rslt.next()){
@@ -140,7 +141,8 @@ import com.sdzee.gs.beans.User;
               
            }catch(SQLException e){
                e.printStackTrace();
-           }      
+           }    
+        System.out.println(P.getNOM());
            return P;
     }
     public static Role RetournerNoneRole(){
@@ -298,9 +300,9 @@ import com.sdzee.gs.beans.User;
            
            return enseignants;
     }
-    public static ArrayList<Etudiant> ConsulterEtudiant(){
-           String Query="SELECT *FROM etudiants e inner join personne p on e.ID_PERS=p.ID_PERS";
-           
+    public  ArrayList<Etudiant> ConsulterEtudiant(){
+           String Query="SELECT *FROM etudiant e inner join personne p on e.ID_PERS=p.ID";
+           System.out.println("hi");
            ArrayList<Etudiant> etudiants=new ArrayList<Etudiant>();
     
            try{
@@ -310,7 +312,7 @@ import com.sdzee.gs.beans.User;
 
                while(rslt.next()){
                Etudiant etd = new Etudiant();
-              
+               System.out.println(rslt.getInt("ID_PERS"));
                etd.setID_PERS(rslt.getInt("ID_PERS"));
                etd.setNOM(rslt.getString("NOM"));
            
@@ -319,7 +321,7 @@ import com.sdzee.gs.beans.User;
                etd.setMAIL(rslt.getString("MAIL"));
                etd.setTEL(rslt.getInt("TEL"));
                etd.setCIN(rslt.getString("CIN"));
-               etd.setID_ETD(rslt.getInt("ID_ETD"));
+               
                etd.setNUM_INSC(rslt.getInt("NUM_INSC"));
                
                etudiants.add(etd);
@@ -360,22 +362,22 @@ import com.sdzee.gs.beans.User;
                e.printStackTrace();
            }
     }
-    public static void ModifierEtudiant(Etudiant etd,Personne p){
-        System.out.println("Num etudiant"+etd.getID_ETD());
+   public static void ModifierEtudiant(int num, Personne p){
+       
+	 
         System.out.println("Num personne"+p.getID_PERS());
-         String Query1="Update etudiants set NUM_INSC="+etd.getNUM_INSC()+" where ID_ETD="+etd.getID_ETD() ;
-         String Query2="Update personne set NOM="+"\""+etd.getNOM()+"\""+",PRENOM="+"\""+etd.getPRENOM()+"\""+", ADRESSE="+"\""+etd.getADRESSE()+"\""+",TEL="+etd.getTEL()+",MAIL="+"\""+etd.getMAIL()+"\""+",CIN="+"\""+etd.getCIN()+"\""+"where ID_PERS="+p.getID_PERS();
+       
+         String Query2="Update personne set NOM="+"\""+p.getNOM()+"\""+",PRENOM="+"\""+p.getPRENOM()+"\""+", ADRESSE="+"\""+p.getADRESSE()+"\""+",TEL="+p.getTEL()+",MAIL="+"\""+p.getMAIL()+"\""+",CIN="+"\""+p.getCIN()+"\""+"where ID="+p.getID_PERS();
          
        try{
             
                
-               PreparedStatement stmt=cnx.prepareStatement(Query1);
                PreparedStatement stmt1=cnx.prepareStatement(Query2);
              //  stmt.setString(1, role.getNOM());         
-               int rslt=stmt.executeUpdate(Query1); 
+        
                int rslt1=stmt1.executeUpdate(Query2);  
 
-               System.out.println(rslt);
+            
                System.out.println(rslt1);
 
            }catch(SQLException e){
@@ -404,9 +406,9 @@ import com.sdzee.gs.beans.User;
                e.printStackTrace();
            } 
     }
-    public static void SuprimerEtudiant(int ID_ETD,Personne P){
-        String Query1="Delete from personne where ID_PERS="+P.getID_PERS();
-        String Query2="Delete from etudiants where ID_ETD="+ID_ETD;
+    public static void SuprimerEtudiant(int num,int id){
+        String Query1="Delete from personne where ID="+id;
+        String Query2="Delete from etudiant where NUM_INSC="+num;
         try{
                
                PreparedStatement stmt=cnx.prepareStatement(Query1);
@@ -487,7 +489,7 @@ import com.sdzee.gs.beans.User;
                stmt.execute(Query, Statement.RETURN_GENERATED_KEYS);
                ResultSet rslt=stmt.getGeneratedKeys();
                if(rslt.next()) id=rslt.getInt(1);
-               PreparedStatement stmt1=cnx.prepareStatement("Insert into etudiants (NUM_INSC,ID_PERS) values("+etd.getNUM_INSC()+","+id+")");
+               PreparedStatement stmt1=cnx.prepareStatement("Insert into etudiant (NUM_INSC,ID_PERS) values("+etd.getNUM_INSC()+","+id+")");
                stmt1.execute();
           }catch(SQLException e){
               e.printStackTrace();
@@ -570,7 +572,7 @@ import com.sdzee.gs.beans.User;
            
            return roles;
     }   
-    public static ArrayList<Etudiant> RechercherEtudiant(int NUMINSC){
+   /* public static ArrayList<Etudiant> RechercherEtudiant(int NUMINSC){
            String Query="SELECT *FROM etudiants e inner join personne p on e.ID_PERS=p.ID_PERS  where e.NUM_INSC=?";
            
            ArrayList<Etudiant> etds=new ArrayList<Etudiant>();
@@ -603,8 +605,8 @@ import com.sdzee.gs.beans.User;
           
            
            return etds;
-       }
-    public static ArrayList<Enseignant> RechercherEnseignant(int CNSS){
+       }*/
+  /*  public static ArrayList<Enseignant> RechercherEnseignant(int CNSS){
          String Query="SELECT *FROM enseignant e inner join personne p on e.ID_PERS=p.ID_PERS inner join departement d on e.ID_DEP=d.ID_DEP  where e.CNSS=?";
            
            ArrayList<Enseignant> enseignants=new ArrayList<Enseignant>();
@@ -641,43 +643,8 @@ import com.sdzee.gs.beans.User;
            
            return enseignants;
      }
-    
-    public static ArrayList<Etudiant> ConsulterGroupeByNUM(int IDG,int ID_ETD){
-           String Query="SELECT *FROM etudiant_groupe eg  inner join etudiants e on eg.ID_ETD=e.ID_ETD inner join personne p on e.ID_PERS=p.ID_PERS where eg.ID_GRP=? and eg.ID_ETD=?";
-           
-           ArrayList<Etudiant> etudiants=new ArrayList<Etudiant>();
-    
-           try{
-               
-               PreparedStatement stmt=cnx.prepareStatement(Query);
-               stmt.setInt(1, IDG);
-               stmt.setInt(2, ID_ETD);
-               ResultSet rslt=stmt.executeQuery();   
-
-               while(rslt.next()){
-               Etudiant etd = new Etudiant();
-              
-               etd.setID_PERS(rslt.getInt("ID_PERS"));
-               etd.setNOM(rslt.getString("NOM"));
-           
-               etd.setPRENOM(rslt.getString("PRENOM"));
-               etd.setADRESSE(rslt.getString("ADRESSE"));
-               etd.setMAIL(rslt.getString("MAIL"));
-               etd.setTEL(rslt.getInt("TEL"));
-               etd.setCIN(rslt.getString("CIN"));
-               etd.setID_ETD(rslt.getInt("ID_ETD"));
-               etd.setNUM_INSC(rslt.getInt("NUM_INSC"));
-               
-               etudiants.add(etd);
-               } 
-              
-           }catch(SQLException e){
-               e.printStackTrace();
-           }
-          
-           
-           return etudiants;
-    }   
+    */
+  
     public static ArrayList<Enseignant> ConsulterGroupeByCNSS(int ID_GRP,int ID_ENS){
          String Query="SELECT *FROM enseignant_groupe eg  inner join enseignant e on eg.ID_ENS=e.ID_ENS inner join personne p on e.ID_PERS=p.ID_PERS inner join departement dep on dep.ID_DEP=e.ID_DEP where eg.ID_GRP=? and eg.ID_ENS=?";
            
