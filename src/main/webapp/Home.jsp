@@ -21,6 +21,7 @@ if(session.getAttribute("user")!=null){
 <div id="menu">
 <p><a href="<c:url value="GestionEtudiants.jsp"/>">Gérer les étudiants</a></p>
 <p><a href="<c:url value="GestionEnseignants.jsp"/>">Gérer les enseignants</a></p>
+<p><a href="<c:url value="GestionUtilisateurs.jsp"/>">Gérer les utilisateurs</a></p>
 <p><a href="<c:url value="/Logout"/>">Log-out</a></p>
 </div>
 </body>
