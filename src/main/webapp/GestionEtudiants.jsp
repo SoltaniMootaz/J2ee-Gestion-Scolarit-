@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/TableStyles.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
 <h1 >Gérer Les étudiants</h1>
 </div>
 <div class="content">
-<table border="1">
+<table id="tableau">
 <tr>
 <th>Numero inscription</th>
 <th>Nom</th>
@@ -23,6 +24,8 @@
 <th>Adresse</th>
 <th>Mail</th>
 <th>Numero telephone</th>
+<th></th>
+<th></th>
 </tr>
 <%
  

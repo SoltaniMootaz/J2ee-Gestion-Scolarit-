@@ -1,7 +1,7 @@
 package com.sdzee.gs.beans;
 
 public class Etudiant extends Personne {
-   
+    private int ID_ETD;
 	private int NUM_INSC;
 
 
@@ -33,6 +33,18 @@ public Etudiant( int NUM_INSC, int ID_PERS, String NOM, String PRENOM, String AD
     super(ID_PERS, NOM, PRENOM, ADRESSE, TEL, MAIL, CIN);
  
     this.NUM_INSC = NUM_INSC;
+}
+
+
+
+public int getID_ETD() {
+	return ID_ETD;
+}
+
+
+
+public void setID_ETD(int iD_ETD) {
+	ID_ETD = iD_ETD;
 }
 
 

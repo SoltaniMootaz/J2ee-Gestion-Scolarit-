@@ -11,28 +11,36 @@
 </head>
 <body>
 <div class="Action_btns">
-<p><a href="<c:url value="Home.jsp"/>">Retourner</a></p>
+<p><a href="<c:url value="../../GestionMatieres.jsp"/>">Annuler</a></p>
 </div>
 <div class="title">
-<h1>Ajouter une note</h1>
+<h1>Ajouter une matiere</h1>
 </div>
 <%
 
 try {
-	String msg="";
-	msg=request.getParameter("msg");
 	Connexion conn=new Connexion();
 	ArrayList<Groupe> grp=conn.ConsulterGroupes();
 	
-	if(msg!=null){
+	
 %>
-<p><%=msg %></p>
-<%
-}%>
 <div>
-<form method="get" action=" <c:url value="/inc/GNote/ajouter.jsp" />" >
+<form method="get" action=" <c:url value="/AjouterMatiere" />" >
 <fieldset>
-<legend>Choisir un groupe et saisir le numéro d'inscription de l'étudiant:</legend>
+<legend>Ajout</legend>
+
+<label for="nom">Nom du matiere</label>
+<input type="text" id="nom" name="nom" value=""
+size="30" maxlength="30" />
+<br />
+<label for="prenom">CNSS de l'enseignant</label>
+<input type="text" id="num" name="num" value=""
+size="30" maxlength="30" />
+<br />
+<label for="coef">Coef.</label>
+<input type="text" id="coef" name="coef" value=""
+size="30" maxlength="30" />
+<br />
 <label for="grp">Choisir le groupe:</label>
 <select name="grp" id="grp">
 <%
@@ -43,14 +51,8 @@ for(Groupe g : grp){
 }
 %>
 </select>
-<br />
-<label for="num">Num inscription</label>
-<input type="text" id="num" name="num" value=""
-size="30" maxlength="30" />
-<br />
-
 </fieldset>
-<input type="submit" value="Suite" /><br/>
+<input type="submit" value="Enregistrer" /><br/>
 
 <%
 } catch (ClassNotFoundException e) {

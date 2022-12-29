@@ -4,27 +4,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/LoginStyles.css">
 <title>Log-in</title>
 </head>
-<body>
-<div>
-<form method="get" action="<c:url value="LoginServlet"/>">
-<fieldset>
-<legend>GS LOGON</legend>
-<label for="userName">Utilisateur</label>
+<body >
+<div class="margintop">ㅤ</div>
+<div class="login" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">S'Authentifié</h2>
+
+<form class="login-container" method="get" action="<c:url value="LoginServlet"/>">
+
 <input type="text" id="user" name="user" value=""
-size="30" maxlength="30" />
+size="30" placeholder="Matricule" maxlength="30" />
 <br />
-<label for="passWord">Mot de pass</label>
 <input type="password" id="mdp" name="mdp" value=""
-size="30" maxlength="60" />
+size="30" placeholder="Mot de passe" maxlength="60" />
 <br />
 
-</fieldset>
-<input type="submit" value="Valider" />
-<input type="reset" value="Changer mot de pass" /> <br
-/>
+<input type="submit" value="V A L I D E R" />
+
 </form>
 </div>
+
 </body>
 </html>

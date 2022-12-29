@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+#tableau {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.content{
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-left:1px solid #ddd;
+	box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#tableau td, #tableau th {
+  border: 0px ;
+  
+
+  padding: 8px;
+}
+
+#tableau tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableau tr:hover {background-color: #ddd;}
+
+#tableau th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4E54C8;
+  color: white;
+}
