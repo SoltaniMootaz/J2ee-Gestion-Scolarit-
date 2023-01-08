@@ -2,12 +2,20 @@
     pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <%@ page import="com.sdzee.gs.db.Connexion,java.io.IOException,java.util.*,java.sql.*,com.sdzee.gs.beans.User,com.sdzee.gs.beans.Groupe,com.sdzee.gs.beans.Personne" %>
- 
+ <%
+String user="";
+if(session.getAttribute("user")!=null){
+	user=session.getAttribute("user").toString();
+}else{
+	response.sendRedirect("Login.jsp");
+}
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Modifier matière</title>
 </head>
 <body>
 <div class="Action_btns">
