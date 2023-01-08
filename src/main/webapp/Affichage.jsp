@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Affichage</title>
+
 </head>
 <body>
 <div class="Action_btns">

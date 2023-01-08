@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/TableStyles.css">
+<title>Gestion des enseignants</title>
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStryle.css">
 </head>
 <body>
 <div class="Action_btns">

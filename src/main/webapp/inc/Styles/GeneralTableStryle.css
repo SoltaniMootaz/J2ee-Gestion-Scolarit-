@@ -1,12 +1,21 @@
 @charset "ISO-8859-1";
+body{
+	background-color: #fbfbff;
+}
 #tableau {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
-
+.content {
+    background-color:#ffffff;
+    border-top:1px solid;
+	border-left:1px solid;
+	border-right:1px solid;
+	border-bottom:1px solid;
+}
 #tableau td, #customers th {
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   padding: 8px;
 }
 

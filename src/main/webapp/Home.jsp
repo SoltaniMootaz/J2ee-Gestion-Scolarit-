@@ -16,7 +16,7 @@ if(session.getAttribute("user")!=null){
 <link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/HomeStyles.css">
 <script src="https://kit.fontawesome.com/63b8318701.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>Home page</title>
+<title>Page d'acceuil</title>
 </head>
 <body>
 

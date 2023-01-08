@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Resultat</title>
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStryle.css">
 </head>
 <body>
 <%
@@ -26,7 +27,7 @@ try {
 	
 
 %>
-
+	
 <table border="1">
 <tr>
 <th rowspan="2">Numero inscription</th>

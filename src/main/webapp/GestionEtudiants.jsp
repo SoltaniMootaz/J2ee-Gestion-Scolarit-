@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStyle.css">
-<title>Gérer Les étudiants</title>
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStryle.css">
+<title>Gestion des étudiants</title>
 </head>
 <body>
 <div class="Header">
@@ -17,7 +17,7 @@
 <center><h1 >Gérer Les étudiants</h1></center>
 </div>
 </div>
-
+<div class="content">
 <table id="tableau">
 <tr>
 <th>Numero inscription</th>
@@ -58,6 +58,7 @@ try {
 } 
 %>
 </table>
+</div>
 
 <div >
 <center><p><a class="Add" href="<c:url value="/inc/GEtudiant/ajouter.jsp"/>">Ajouter</a></p><center>
