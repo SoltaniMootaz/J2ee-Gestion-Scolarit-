@@ -25,7 +25,7 @@ if(session.getAttribute("user")!=null){
 <h1 >Gérer Les groupes</h1>
 </div>
 <div class="content">
-<table border="1">
+<table id="tableau">
 <tr>
 <th>ID du groupe</th>
 <th>Nom du groupe</th>

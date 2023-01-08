@@ -14,6 +14,8 @@ if(session.getAttribute("user")!=null){
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStryle.css">
+
 <title>Gestion des étudiants des groupes</title>
 <link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStryle.css">
 </head>
@@ -25,7 +27,7 @@ if(session.getAttribute("user")!=null){
 <h1 >Gérer Les etudiants du groupe: <%=request.getParameter("nom") %></h1>
 </div>
 <div class="content">
-<table border="1">
+<table id="tableau">
 <tr>
 <th>ID du groupe</th>
 <th>Nom du groupe</th>

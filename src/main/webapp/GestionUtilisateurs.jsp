@@ -14,17 +14,20 @@ if(session.getAttribute("user")!=null){
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStryle.css">
 <title>Gestion des utilisateurs</title>
 </head>
 <body>
 <div class="Action_btns">
 <p><a href="<c:url value="Home.jsp"/>">Retourner</a></p>
 </div>
+
+
 <div class="title">
 <h1 >Gérer Les utilisateurs</h1>
 </div>
 <div class="content">
-<table border="1">
+<table id="tableau">
 <tr>
 <th>ID</th>
 <th>Nom</th>

@@ -25,7 +25,7 @@ if(session.getAttribute("user")!=null){
 <h1 >Gérer Les enseignants</h1>
 </div>
 <div class="content">
-<table border="1">
+<table id="tableau">
 <tr>
 <th>Numero cnss</th>
 <th>Nom</th>

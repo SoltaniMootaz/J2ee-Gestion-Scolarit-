@@ -35,8 +35,8 @@ try {
 	
 
 %>
-	
-<table border="1">
+<div class="content">
+<table id="tableau">
 <tr>
 <th rowspan="2">Numero inscription</th>
 <th rowspan="2">Nom et prenom</th>
@@ -92,6 +92,7 @@ moygen/=coefmoy;%>
 
 </tr>
 </table>
+</div>
 <%
 } catch (ClassNotFoundException e) {
 	// TODO Auto-generated catch block

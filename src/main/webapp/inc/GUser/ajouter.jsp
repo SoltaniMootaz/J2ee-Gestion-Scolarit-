@@ -10,7 +10,7 @@ if(session.getAttribute("user")!=null){
 	response.sendRedirect("Login.jsp");
 }
 
-%>
+%>s
 <!DOCTYPE html>
 <html>
 <head>
