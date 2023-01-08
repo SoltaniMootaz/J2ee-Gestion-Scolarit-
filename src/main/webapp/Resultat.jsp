@@ -75,7 +75,8 @@ for(Matiere m:mtr){
 %>
 <td><%=moymat %></td>
 
-<%}moygen/=coefmoy;%>
+<%}
+moygen/=coefmoy;%>
 <td><%=moygen %></td>
 <%}
 %>

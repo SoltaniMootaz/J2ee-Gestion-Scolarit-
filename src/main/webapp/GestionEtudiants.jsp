@@ -5,17 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/TableStyles.css">
-<title>Insert title here</title>
+<link rel="stylesheet" href="/Gestion_Scolarite/inc/Styles/GeneralTableStyle.css">
+<title>Gérer Les étudiants</title>
 </head>
 <body>
-<div class="Action_btns">
+<div class="Header">
+<div class="Return">
 <p><a href="<c:url value="Home.jsp"/>">Retourner</a></p>
 </div>
-<div class="title">
-<h1 >Gérer Les étudiants</h1>
+<div class="Title">
+<center><h1 >Gérer Les étudiants</h1></center>
 </div>
-<div class="content">
+</div>
+
 <table id="tableau">
 <tr>
 <th>Numero inscription</th>
@@ -56,9 +58,9 @@ try {
 } 
 %>
 </table>
-</div>
-<div class="Action_Btns">
-<p><a href="<c:url value="/inc/GEtudiant/ajouter.jsp"/>">Ajouter</a></p>
+
+<div >
+<center><p><a class="Add" href="<c:url value="/inc/GEtudiant/ajouter.jsp"/>">Ajouter</a></p><center>
 
 </div>
 </body>
