@@ -51,13 +51,14 @@ public class Note {
 	    }
 	    
 	    public Note RetournerNoteForMoy(ArrayList<Note> notes,int ID_MAT, int ID_TYPEN,int ID_ETD) {
+	    	Note n1=new Note();
 	    	for(Note n : notes) {
 	    		if(n.getMAT().getID()==ID_MAT && n.getTYPE().getID_TypeN()==ID_TYPEN && n.getETD().getID_ETD()==ID_ETD) {
-		    		System.out.println("Note:"+n.getNote() +", ID_MAT:"+ID_MAT +",ID_TYPEN:"+ID_TYPEN +",ID_ETD:"+ID_ETD);
-		    		return n;
+		    		
+		    		n1=n;
 	    		}
 	    	}
-	    	Note n1=new Note(null, null, null, 0.0);
+	    	
 	    	return n1;
 	    }
 	   

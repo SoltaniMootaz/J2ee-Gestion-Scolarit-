@@ -58,11 +58,12 @@ for(int i=0; i<mtr.size();i++){
 
 <% } %>
 </tr>
-<tr>
+
 <%
 
 for (Etudiant e:etd){
 %>
+<tr>
 <td><%=e.getNUM_INSC() %></td>
 <td><%=e.getNOM() %> <%=e.getPRENOM() %></td>
 <%
@@ -73,7 +74,8 @@ for(Matiere m:mtr){
 	for(TypeNote tn:tns){
 		Note n=new Note();
 		n=n.RetournerNoteForMoy(notes, m.getID(), tn.getID_TypeN(), e.getID_ETD());
-		moymat +=n.getNote()*n.getTYPE().getCOEF_N();	
+		
+		moymat +=n.getNote()*tn.getCOEF_N();	
 		
 	%>
 	<td><%=n.getNote() %></td>
@@ -87,10 +89,11 @@ for(Matiere m:mtr){
 <%}
 moygen/=coefmoy;%>
 <td><%=moygen %></td>
+</tr>
 <%}
 %>
 
-</tr>
+
 </table>
 </div>
 <%

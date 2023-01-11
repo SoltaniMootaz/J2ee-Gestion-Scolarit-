@@ -22,7 +22,7 @@ if(session.getAttribute("user")!=null){
 <p><a href="<c:url value="Home.jsp"/>">Retourner</a></p>
 </div>
 <div class="title">
-<h1 >Gérer Les étudiants</h1>
+<h1 >Gérer Les matières</h1>
 </div>
 <div class="content">
 <table id="tableau">

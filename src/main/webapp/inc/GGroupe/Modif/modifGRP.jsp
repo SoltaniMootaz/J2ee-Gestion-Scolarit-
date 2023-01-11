@@ -14,7 +14,7 @@
 <p><a href="<c:url value="../../../GestionGroupes.jsp"/>">Annuler</a></p>
 </div>
 <div class="title">
-<h1>Ajouter un etudiant au groupe</h1>
+<h1>Modifier le groupe</h1>
 </div>
 
 <div>
